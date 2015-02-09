@@ -3,6 +3,7 @@
 # General Principles
 
 * Testing: Code should be tested and we recommend test-driven (or test-oriented) development.
+* Continuous Integration: wherever possible testing should be automated and part of push to the main repo
 * All code should be kept in a distributed version control system (git)
 * Languages: we have two "approved" languages: Python and Javascript (NodeJS).
   If you plan to develop in another language please flag this and discuss.
@@ -46,6 +47,10 @@ Use pylint: http://www.logilab.org/857
 ## Frameworks
 
 * WebApps: we prefer Flask (though we have many legacy apps in Pylons)
+
+## Testing
+
+* Use nosetests
 
 ## External Resources
 
@@ -138,6 +143,12 @@ For more discussion of how this works:
 
 * http://forceten.tidalwave.it/development/mercurial-best-practices/
 * http://www.rabbitmq.com/mercurial.html#branchperbug
+
+----
+
+# Continuous Integration
+
+* We use Travis by default - get in touch if you need access to okfn account
 
 ----
 
