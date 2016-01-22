@@ -167,7 +167,7 @@ For more discussion of how this works:
 * In general do not use trailing slash on urls (but ensure you redirect 301 from trailing slash to non-trailing slash)
   * e.g.: /work not /work/, /work/9 not /work/9/
 
-### RESTFul Services
+### RESTful Services
 
 * Singular is preferred to plural for entity names - person vs person (or people), record vs records etc
   * No clear decision on this AFAICT on the wb
