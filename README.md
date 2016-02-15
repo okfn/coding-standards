@@ -170,3 +170,7 @@ All packages must be published to npm and pypi from the CI server.
 
 * Use plural versions of entities names for endpoints
 * When implementing RESTful APIs, keep them RESTful, but don't hesitate to create endpoints that are not RESTful when it is practical
+
+## Further reading
+
+* http://docs.python-guide.org/en/latest/
