@@ -1,177 +1,172 @@
-# Open Knowledge Coding Standards and Style Guide
+# Open Knowledge International Coding Standards
 
-This document describes coding standards and style guides for use at Open Knowledge International.
+This document outlines coding standards for use at Open Knowledge International. It is a living document, and we encourage pull request and issues to improve on or contest ideas as expressed.
 
-## General Principles
+## Related documents
 
-* **Testing**: Code should be tested and we recommend test-driven (or test-oriented) development.
-* **Continuous Integration**: wherever possible testing should be automated and part of push to the main repo
-* **Versioning**: All code should be kept in a distributed version control system (git)
-* **Languages**: we have two "approved" languages: Python and Javascript (NodeJS). If you plan to develop in another language please flag this and discuss.
-
-----
+* [Code reviews](sections/reviews.md): A description of our general code review process at Open Knowledge International.
 
 ## TL;DR
 
-* Use spaces and never tabs
-* Javascript, HTML and CSS with 2 space indentation; Python with 4 space indentation
+* We use Python and Javascript (Node.js). If you plan to develop in another language please flag this and discuss.
+* Tests are required. Unit tests, as well as functional and integration tests. Aiming for test coverage of 80% and above is desirable.
+  * Tests must be automated via a continuous integration platform that is triggered when code is pushed to the canonical repository. 
+
+* Documentation is required for all code. Documentation is just as important as tests.
+  * Document functions, classes, modules and packages with docstrings.
+  * Provide a great `README.md` file with examples of how to use the code.
+  * Only use documentation builders like Sphinx for large projects; prefer `README.md` files for brevity and accessibility of documentation.
+
+* Use spaces and never tabs.
+  * Javascript, HTML and CSS: 2 space indentation.
+  * Python: 4 space indentation.
+* Strictly enforce a 79 character line limit.
+* Lint Javascript with `eslint`; Lint Python using `pylint`.
+* Use common language conventions for naming functions, classes and variables.
+
+* Code should be submitted via pull requests, which another person should merge.
+* Use continuous deployment.
+  * Apps should be deployed from Travis when a successful build is made on the branch used for production.
+  * Packages should be published to the respective package registry when a tag is pushed.
+* Write small, reusable libraries where possible. There are many opportunities for reuse across our different products.
+
+---
+
+## Languages
+
+Our work is done in Python and Javascript (Node.js). There can be good reasons for writing a particular library or app in another language, but if you think this is the case, please raise this issue directly before starting any work.
+
+For example apps that implement the OKI preferences, see the following:
+
+* [opendata lib in Javascript](https://github.com/okfn/opendata-js)
+* [opendata lib in Python](https://github.com/okfn/opendata-py)
+
+## Style and linting
+
+### Python
+
+1. Follow the Python Style Guide (PSG) as formulated in PEP-8: http://www.python.org/dev/peps/pep-0008/
+2. Use `pylint` to lint code.
+
+The critical points are:
+
+* Use spaces; never use tabs
+* 4 space indentation
 * 79 character line limit
-* Lint Javascript with `jscs` using `esnext`; Lint Python using `pylint`
-* Use language conventions for naming functions, classes and variables. These conventions are quite clear for both Python and Javascript
-* Code should be submitted via pull requests, which another person should merge
-* Tests are required. Unit tests, as well as functional and integration tests.
-* Aiming for 80% and above test coverage is desirable
-* Write small, reusable libraries as possible
-* Documentation is just as important as tests.
-  * Document your code with docstrings
-  * Provide great `README` files with examples of how to use
-  * Only use documentation builders like Sphinx for large projects; prefer to document projects really well in README files
+* Variables, functions and methods should be `lower_case_with_underscores`
+* Classes are `TitleCase`
 
-## Python
+And other preferences:
 
-In general follow the python style guide (PSG) as formulated in PEP 8: http://www.python.org/dev/peps/pep-0008/
+* Use ' and not " as the quote character by default
+* When writing a method, consider if it is really a method (needs `self`) or if it would be better as a utility function
+* When writing a `@classmethod`, consider if it really needs the class (needs `cls`) or it would be better as a utility function or factory class
 
-### Formatting
+### Javascript
 
-* Tabs vs. Spaces
-  * Spaces
-  * 4 spaces for a tab
-* 79 character limit: in general all lines should be wrapped at 79 characters
-* Quote character: use ' not " wherever possible (including docstrings)
+1. Use `eslint` to lint code.
+2. Prefer to write all new code in `ES6` and compile/transpile with Webpack or Browserify. This applies to frontend and backend code. In some cases, the cost of transpilation (inflated file size) is too great (for small utility libraries), so use judgement.
 
-### Coding
+The critical points are:
 
-As in PSG, e.g.:
+* Use spaces; never use tabs
+* 2 space indentation
+* 79 character line limit
+* Variables, functions and methods should be `camelCase`
+* Classes are `TitleCase`
 
-* all variables and method names are lower_case_with_underscores
-* class names: capital camel case
-* do not make extra functions or methods to wrap one line statements or calls to well known libraries unless there is a very good reason
-* if a method does not use the 'self' or 'cls' parameter, think: should it really be a method? most likely it should be a utility function as it has nothing to do with the class in question.
-* the @classmethod decorator should be used sparingly, consider is it really necessary? could its job be accomplished with a simple function or a factory class?
-* the first argument to a classmethod should be 'cls' not 'self'. 'self' is for instances.
-* for paste or pylons derived applications, use 'paste.deploy.converters.asbool' to check boolean configuration variables. do not try to rewrite this function or "set config variable to any value (e.g. false) to enable".
+And other preferences:
 
-### Documentation
+* Don't use semi-colons in `ES6` or any code that you are transpiling - it is quite unnecessary.
 
-* Use sphinx style documentation conventions
-  * See for function/method parameters: http://packages.python.org/an_example_pypi_project/sphinx.html#function-definitions
-* All arguments and return values of public apis *should* be documented
+## Testing
 
-### Checking
+### Python
 
-Use pylint: http://www.logilab.org/857
+1. Use `tox` with `py.test` to test code.
 
-### Frameworks
+### Javascript
 
-* WebApps: we prefer Flask (though we have many legacy apps in Pylons)
+1. Use `mocha` to test code.
+2. Use `Zombie.js` or `jsdom` for tests that require a DOM.
 
-### Testing
+## Documentation
 
-* Use nosetests
+### Python
 
-### External Resources
+#### Docstrings
 
-* http://lists.osafoundation.org/pipermail/dev/2003-March/000479.html - David Jeske post - very good.
-* http://epydoc.sourceforge.net/epytextintro.html epytext
+Use Sphinx-style or Google-style documentation conventions.
 
-----
+* http://packages.python.org/an_example_pypi_project/sphinx.html#function-definitions
+* https://google.github.io/styleguide/pyguide.html#Comments
 
-## Javascript and NodeJS
+#### User documentation
 
-Write `es6` in all new libraries, and compile with WebPack or Browserify. See some [existing](https://github.com/okfn/gobetween) [examples](https://github.com/okfn/spend-publishing-dashboard) of OKI codebases using `es6` on for both backend and frontend code.
+Prefer to make really good `README.md` files, rather than implementing a full documentation framework.
 
-Specific items:
+### Javascript
 
-* Indentation: 2-spaces (not tabs)
-  * See e.g. http://nodeguide.com/style.html#tabs-vs-spaces
-* Line-length: 79 characters
-* Don't use commas in `es6` - let the compiler take care of that stuff
+#### Docstrings
 
-### Testing
+Use Google-style documentation conventions.
 
-* Use `mocha` for tests
-* Use `Zombie.js` or `jsdom`, when tests require a browser
+* https://google.github.io/styleguide/javascriptguide.xml#Comments
 
-### Documentation
+#### User documentation
 
-We do not have strong recommendations here but if you are using a parameter convention we recommend JSDoc: http://jsdoc.sourceforge.net/#usage
+Prefer to make really good `README.md` files, rather than implementing a full documentation framework. 
 
-* See also: JS Doc Toolkit: http://code.google.com/p/jsdoc-toolkit/wiki/TagReference
+## Frameworks
 
-### Frameworks
+We prefer the following frameworks and libraries. If you want to use an *alternative to one of these please flag this before starting any work.
 
-* NodeJS: we use Express by default
-* Javascript: we've historically used Backbone. We have not yet settled on moving forward with React or Angular.
-  * Toolbelt libraries: `jQuery`, `lodash`
+### Python
 
-----
+* Flask
+* Click
 
-## CSS
+### Javascript
 
-* Indent: 2-space spaces
-* open bracket on same line as css-selector
-* space after selector before bracket
+* lodash
+* Express
+* React
+* Angular
 
+## Version control
 
-```
-body {
-  font-family: Arial;
-}
+We use Git for all projects.
 
-body, h1, h2 {
-}
-// or
-body,
-h1
-h2 {
-  display: block;
-}
-```
+### Branch management
 
-----
+We generally follow Git Flow, with some modifications, and some flexibility per project. The following should hold true for pretty much all projects:
 
-## Distributed Version Control
+* Have a `master` branch
+* Never commit directly to `master`
+* Always work from a `feature/{}` or a `fix/{}` branch that is checked out from `master`
+* Always reference issues from Git messages using `#{issue_id}`, and the various other related conventions used by most Git hosts.
+* Properly describe changes in commit messages: "Fixes database migration script failure on Python 2.7", not "Fix."
 
-We use git for all projects.
+## Continuous integration and deployment
 
-### Commit Messages
+All projects must be configured with a CI server. We use Travis CI by default. The CI server must run the test suite with linting.
 
-* Commit messages should be written in plain sentences that describe the change made and what area of the code it relates to. The following style guide has good recommendations for formatting commit messages: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
-* If a project is hosted on GitHub, it is recommended that relevant issue numbers are referenced in the commit message where appropriate. Use the convention of `#{issue-id}` in commit messages to automatically link back to issues. Issues can also be closed via commit messages, e.g. "... fixes #123" (https://help.github.com/articles/closing-issues-via-commit-messages/).
+## App deployment
 
-### Branch-per-feature (and per-bug)
+All apps must be deployed from the CI server.
 
-This approach is frequently recommended and may be adopted on a per-project
-basis, and is especially recommended for larger projects:
+## Package publication
 
-* Create a branch for each feature of bug. Naming convention: bug-{bug-name}, feature-{feature-name}
-* Close and merge into default once QA is done
+All packages must be published to npm and pypi from the CI server.
 
-For more discussion of how this works:
+## Web apps
 
-* http://forceten.tidalwave.it/development/mercurial-best-practices/
-* http://www.rabbitmq.com/mercurial.html#branchperbug
-
-----
-
-## Continuous Integration
-
-* We use Travis by default - get in touch if you need access to okfn account
-
-----
-
-## Web Applications
-
-### URL Structure
+### URLs
 
 * In general do not use trailing slash on urls (but ensure you redirect 301 from trailing slash to non-trailing slash)
   * e.g.: /work not /work/, /work/9 not /work/9/
 
-### RESTful Services
+### RESTful APIs
 
-* Singular is preferred to plural for entity names - person vs person (or people), record vs records etc
-  * No clear decision on this AFAICT on the wb
-  * http://microformats.org/wiki/rest/urls - prefers plurals
-  * http://blog.roberthahn.ca/articles/2007/04/06/url-design/ - prefers singulars
-* Searching/filtering should generally be done outside of REST
-  * If done via REST must be done via url fragments and '''not''' via query parameters: e.g. /api/rest/person/age/39 (not /api/rest/person?age=39)
+* Use plural versions of entities names for endpoints
+* When implementing RESTful APIs, keep them RESTful, but don't hesitate to create endpoints that are not RESTful when it is practical
