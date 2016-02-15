@@ -136,13 +136,8 @@ We use git for all projects.
 
 ### Commit Messages
 
-* Recommend use of github convention of using `#{issue-id}` in commit messages
-  (along with `fixes #19`
-* [Optional]: Convention of including tag and size of commit at start of
-  summary using `[]` e.g. `[ux][m] This commit does X` - here the tag is "ux"
-  (relates to ux) and size of commit is "m" (medium). Sizes are `xs,s,m,l`. It
-  is also possible just to use size specifiers and drop the tag i.e. `[xs] fix
-  whitespace`.
+* Commit messages should be and written in plain sentences that describe the change made and what area of the code it relates to. The following style guide has good recommendations for formatting commit messages: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
+* If a project is hosted on GitHub, it is recommended that relevant issue numbers are referenced in the commit message where appropriate. Use the convention of `#{issue-id}` in commit messages to automatically link back to issues. Issues can also be closed via commit messages, e.g. "... fixes #123" (https://help.github.com/articles/closing-issues-via-commit-messages/).
 
 ### Branch-per-feature (and per-bug)
 
@@ -172,7 +167,7 @@ For more discussion of how this works:
 * In general do not use trailing slash on urls (but ensure you redirect 301 from trailing slash to non-trailing slash)
   * e.g.: /work not /work/, /work/9 not /work/9/
 
-### RESTFul Services
+### RESTful Services
 
 * Singular is preferred to plural for entity names - person vs person (or people), record vs records etc
   * No clear decision on this AFAICT on the wb
