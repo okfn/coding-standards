@@ -15,7 +15,7 @@ Submitting code for review should follow these steps:
 3. Each feature or fix branch should be focused on a discrete unit of work.
 4. When your unit of work is complete, submit a pull request against the `master` branch on `origin`.
 5. Wait for the CI server to run, validating your tests pass on all target environments. If you do not have tests, or have not configured CI, do that immediately before proceeding.
-6. If CI is green, ask a colleague to review your pull request. This preferably will be a colleague who is not working on your project.
+6. If CI is green, ask a colleague to review your pull request (we will automate this in the near future). This preferably will be a colleague who is not working on your project.
 7. Address any questions from the code review. Sometimes this will involving refactoring, other times it will just mean answering questions.
 8. When the reviewer indicates that the pull request is ready to merge, you may merge into `master`.
 
