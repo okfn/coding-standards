@@ -136,7 +136,7 @@ We use git for all projects.
 
 ### Commit Messages
 
-* Commit messages should be and written in plain sentences that describe the change made and what area of the code it relates to. The following style guide has good recommendations for formatting commit messages: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
+* Commit messages should be written in plain sentences that describe the change made and what area of the code it relates to. The following style guide has good recommendations for formatting commit messages: http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html
 * If a project is hosted on GitHub, it is recommended that relevant issue numbers are referenced in the commit message where appropriate. Use the convention of `#{issue-id}` in commit messages to automatically link back to issues. Issues can also be closed via commit messages, e.g. "... fixes #123" (https://help.github.com/articles/closing-issues-via-commit-messages/).
 
 ### Branch-per-feature (and per-bug)
