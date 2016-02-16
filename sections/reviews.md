@@ -10,14 +10,14 @@ The process for code reviews is straight forward as long as you are already foll
 
 Submitting code for review should follow these steps:
 
-1. Work out of your own fork of the main repository (usually `origin`).
-2. Always, always work from a feature or fix branch that is checked out of `master`.
-3. Each feature or fix branch should be focused on a discrete unit of work.
-4. When your unit of work is complete, submit a pull request against the `master` branch on `origin`.
-5. Wait for the CI server to run, validating your tests pass on all target environments. If you do not have tests, or have not configured CI, do that immediately before proceeding.
-6. If CI is green, ask a colleague to review your pull request (we will automate this in the near future). This preferably will be a colleague who is not working on your project.
-7. Address any questions from the code review. Sometimes this will involving refactoring, other times it will just mean answering questions.
-8. When the reviewer indicates that the pull request is ready to merge, you may merge into `master`.
+1. Always, always work from a feature or fix branch that is checked out of `master`.
+2. Each feature or fix branch should be focused on a discrete unit of work.
+3. When your unit of work is complete, submit a pull request against the `master` branch on `origin`. Ensure your [commit message](https://github.com/okfn/coding-standards#version-control) is communicative.
+4. Wait for the CI server to run, validating your tests pass on all target environments. If you do not have tests, or have not configured CI, do that immediately before proceeding.
+5. If CI is green, ask a colleague to review your pull request (we will automate this in the near future). This preferably will be a colleague who is not working on your project.
+6. Address any questions from the code review. Sometimes this will involving refactoring, other times it will just mean answering questions.
+7. When the reviewer indicates that the pull request is ready to merge, you may merge into `master`. It is *recommended* that the developer merge her own branch into master, due to the cross-project review process (the developer can decide the best time to merge, after the review has approved the merge).
+8 .**If** your branch was a branch on the main repository (usually `origin`), then you must also remove your branch to reduce clutter. 
 
 ### Reviewing code in a pull request
 
@@ -46,7 +46,7 @@ There are some clear red flags that, on seeing any of them, you should immediate
 
 ### Prioritizing code reviews
 
-Code reviews should take the highest priority of work during the day. When a colleague asks for a review, s/he is asking for work to be validated, and to be unblocked in order to move forward to other tasks.Respect this and address the code review as soon as possible.
+Code reviews should take the highest priority of work during the day. When a colleague asks for a review, s/he is asking for work to be validated, and to be unblocked in order to move forward to other tasks. Respect this and address the code review as soon as possible.
 
 Sometimes, you will be asked to review and you are simply not available (due to meetings or deadlines on the same day - not due to "having your own work to do"). In such cases, communicate immediately with the colleague requesting review so that s/he can find an alternative.
 
