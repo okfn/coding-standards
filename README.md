@@ -38,8 +38,8 @@ Our work is done in Python and Javascript (Node.js). There can be good reasons f
 
 For example apps that implement the OKI preferences, see the following:
 
-* [opendata lib in Javascript](https://github.com/okfn/opendata-js)
-* [opendata lib in Python](https://github.com/okfn/opendata-py)
+* [oki lib in Javascript](https://github.com/okfn/oki-js)
+* [oki lib in Python](https://github.com/okfn/oki-py)
 
 ## Style and linting
 
