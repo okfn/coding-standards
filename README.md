@@ -62,6 +62,20 @@ And other preferences:
 * When writing a method, consider if it is really a method (needs `self`) or if it would be better as a utility function
 * When writing a `@classmethod`, consider if it really needs the class (needs `cls`) or it would be better as a utility function or factory class
 
+#### Python 2/3
+
+As a rule, all Python code should be written to support Python 2 and Python 3. There are some circumstances where, for new apps, we may want to write specifically for the Python 3 interpreter in order to take advantage of great new language features like `asyncio`, but at this stage, this is likely an exception and not the rule. No code should be written to be compatible with Python 2 only.
+
+The [python porting guide](https://docs.python.org/3/howto/pyporting.html) has great, practical advice on writing code for Python 2 and 3. Some choose to use helper libraries like [`six`](https://pypi.python.org/pypi/six). In any case, it is strongly recommend to follow the advice from the Python porting guide and add the following snippet to all Python modules to ensure API consistency for strings, division, imports, and the print function.
+
+```
+# -*- coding: utf-8 -*-
+from __future__ import division
+from __future__ import print_function
+from __future__ import absolute_import
+from __future__ import unicode_literals
+```
+
 ### Javascript
 
 1. Use `eslint` to lint code.
