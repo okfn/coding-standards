@@ -17,7 +17,7 @@ Submitting code for review should follow these steps:
 5. If CI is green, ask a colleague to review your pull request (we will automate this in the near future). This preferably will be a colleague who is not working on your project.
 6. Address any questions from the code review. Sometimes this will involving refactoring, other times it will just mean answering questions.
 7. When the reviewer indicates that the pull request is ready to merge, you may merge into `master`. It is *recommended* that the developer merge her own branch into master, due to the cross-project review process (the developer can decide the best time to merge, after the review has approved the merge).
-8 .**If** your branch was a branch on the main repository (usually `origin`), then you must also remove your branch to reduce clutter. 
+8. **If** your branch was a branch on the main repository (usually `origin`), then you must also remove your branch to reduce clutter. 
 
 ### Reviewing code in a pull request
 
