@@ -11,19 +11,16 @@ This document outlines coding standards for use at Open Knowledge International.
 * We use Python and Javascript (Node.js). If you plan to develop in another language please flag this and discuss.
 * Tests are required. Unit tests, as well as functional and integration tests. Aiming for test coverage of 80% and above is desirable.
   * Tests must be automated via a continuous integration platform that is triggered when code is pushed to the canonical repository. 
-
 * Documentation is required for all code. Documentation is just as important as tests.
   * Document functions, classes, modules and packages with docstrings.
   * Provide a great `README.md` file with examples of how to use the code.
   * Only use documentation builders like Sphinx for large projects; prefer `README.md` files for brevity and accessibility of documentation.
-
 * Use spaces and never tabs.
   * Javascript, HTML and CSS: 2 space indentation.
   * Python: 4 space indentation.
 * Strictly enforce a 79 character line limit.
 * Lint Javascript with `eslint`; Lint Python using `pylint`.
 * Use common language conventions for naming functions, classes and variables.
-
 * Code should be submitted via pull requests, which another person should merge.
 * Use continuous deployment.
   * Apps should be deployed from Travis when a successful build is made on the branch used for production.
