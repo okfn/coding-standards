@@ -26,6 +26,7 @@ This document outlines coding standards for use at Open Knowledge International.
   * Apps should be deployed from Travis when a successful build is made on the branch used for production.
   * Packages should be published to the respective package registry when a tag is pushed.
 * Write small, reusable libraries where possible. There are many opportunities for reuse across our different products.
+* We support modern browsers. Notably, IE 10 and above. Our browser support is in sync with the browser support of Google web properties, as [declared here](https://support.google.com/a/answer/33864?hl=en)
 
 ---
 
@@ -187,6 +188,10 @@ All packages must be published to npm and pypi from the CI server. The procedure
 
 * Use plural versions of entities names for endpoints
 * When implementing RESTful APIs, keep them RESTful, but don't hesitate to create endpoints that are not RESTful when it is practical
+
+### Browser support
+
+We support modern browsers. Notably, IE 10 and above. Our browser support is in sync with the browser support of Google web properties, as [declared here](https://support.google.com/a/answer/33864?hl=en)
 
 ## Further reading
 
