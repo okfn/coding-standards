@@ -158,6 +158,7 @@ We generally follow Git Flow, with some modifications, and some flexibility per 
 * Always work from a `feature/{}` or a `fix/{}` branch that is checked out from `master`
 * Always reference issues from Git messages using `#{issue_id}`, and the various other related conventions used by most Git hosts.
 * Properly describe changes in commit messages: "Fixes database migration script failure on Python 2.7", not "Fix."
+* Prefer to use the "Squash and merge" approach for pull requests using GitHub web interface
 
 ## Continuous integration and deployment
 
