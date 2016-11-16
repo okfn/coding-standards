@@ -53,6 +53,7 @@ The critical points are:
 * 79 character line limit
 * Variables, functions and methods should be `lower_case_with_underscores`
 * Classes are `TitleCase`
+* Do not use relative imports (eg `from .. import xx`),  always use absolute ones (eg `from mypkg import xx`)
 
 And other preferences:
 
