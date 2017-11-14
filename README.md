@@ -1,4 +1,4 @@
-# Open Knowledge International Coding Standards
+# Open Knowledge International Coding Standards
 
 This document outlines coding standards for use at Open Knowledge International. It is a living document, and we encourage pull request and issues to improve on or contest ideas as expressed.
 
