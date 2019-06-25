@@ -1,6 +1,6 @@
 # Code reviews
 
-At Open Knowledge International (OKI) all code must be reviewed by a colleague before merging into the main branch of the repository (usually `master`). This short document examples how to do code reviews, and why we do it.
+At Open Knowledge Foundation (OKF) all code must be reviewed by a colleague before merging into the main branch of the repository (usually `master`). This short document examples how to do code reviews, and why we do it.
 
 ## How
 
@@ -29,7 +29,7 @@ Reviewing someone else's code should follow the following steps:
 
 ### A simple checklist for reviewers
 
-Remember that the primary reason for doing code reviews at Open Knowledge International is to distribute knowledge across our team. This does mean identifying areas the code could be improved and asking useful questions, but it does not mean you go too deeply on issues that are clearly subjective.
+Remember that the primary reason for doing code reviews at Open Knowledge Foundation is to distribute knowledge across our team. This does mean identifying areas the code could be improved and asking useful questions, but it does not mean you go too deeply on issues that are clearly subjective.
 
 Here are some points to hold in mind and guide the review process:
 
@@ -60,7 +60,7 @@ A situation may occur where you are reviewing a language that you do not feel sk
 
 ### Responsibility
 
-Reviewers don't hold final responsibility for code - the person who wrote the code does. Reviewing is a best effort endeavor. 
+Reviewers don't hold final responsibility for code - the person who wrote the code does. Reviewing is a best effort endeavour. 
 
 ## Why
 
