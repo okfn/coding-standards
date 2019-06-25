@@ -1,10 +1,10 @@
-# Open Knowledge International Coding Standards
+# Open Knowledge Foundation Coding Standards
 
-This document outlines coding standards for use at Open Knowledge International. It is a living document, and we encourage pull request and issues to improve on or contest ideas as expressed.
+This document outlines coding standards for use at Open Knowledge Foundation. It is a living document, and we encourage pull request and issues to improve on or contest ideas as expressed.
 
 ## Related documents
 
-* [Code reviews](sections/reviews.md): A description of our general code review process at Open Knowledge International.
+* [Code reviews](sections/reviews.md): A description of our general code review process at Open Knowledge Foundation.
 
 ## TL;DR
 
@@ -34,7 +34,7 @@ This document outlines coding standards for use at Open Knowledge International.
 
 Our work is done in Python and Javascript (Node.js). There can be good reasons for writing a particular library or app in another language, but if you think this is the case, please raise this issue directly before starting any work.
 
-For example apps that implement the OKI preferences, see the following:
+For example apps that implement the OKF preferences, see the following:
 
 * [oki lib in Javascript](https://github.com/okfn/oki-js)
 * [oki lib in Python](https://github.com/okfn/oki-py)
